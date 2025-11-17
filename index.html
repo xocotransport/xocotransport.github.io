@@ -1,0 +1,1553 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Xoco Transport | Cocina en Movimiento</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Xoco Transport, S. de R.L. de C.V. opera soluciones de alimentación móvil y comedores para empresas en Reynosa, con enfoque en sabor mexicano y logística precisa.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+html {
+scroll-behavior: smooth;
+}
+body {
+font-family: "Poppins", sans-serif;
+background: radial-gradient(circle at top left, #f5f4ff 0%, #f8f6ff 30%, #e9e6ff 60%, #fdfbff 100%);
+color: #111827;
+line-height: 1.6;
+}
+a {
+text-decoration: none;
+color: inherit;
+}
+img {
+max-width: 100%;
+display: block;
+}
+header {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+z-index: 40;
+backdrop-filter: blur(20px);
+background: rgba(245,244,255,0.85);
+border-bottom: 1px solid rgba(148,163,184,0.25);
+}
+.nav-container {
+max-width: 1200px;
+margin: 0 auto;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 16px 24px;
+}
+.logo {
+display: flex;
+align-items: center;
+gap: 10px;
+font-weight: 600;
+font-size: 18px;
+letter-spacing: 0.03em;
+}
+.logo-mark {
+width: 30px;
+height: 30px;
+border-radius: 999px;
+background: radial-gradient(circle at 30% 20%, #fef3c7, #a855f7);
+display: flex;
+align-items: center;
+justify-content: center;
+color: #f9fafb;
+font-size: 14px;
+}
+.logo-sub {
+font-size: 11px;
+font-weight: 400;
+color: #6b7280;
+}
+.nav-links {
+display: flex;
+align-items: center;
+gap: 28px;
+font-size: 14px;
+}
+.nav-links a {
+position: relative;
+padding-bottom: 4px;
+transition: color 0.2s ease, transform 0.2s ease;
+}
+.nav-links a::after {
+content: "";
+position: absolute;
+left: 0;
+bottom: 0;
+height: 2px;
+width: 0%;
+background: linear-gradient(90deg,#6366f1,#a855f7);
+border-radius: 999px;
+transition: width 0.25s ease;
+}
+.nav-links a:hover::after {
+width: 100%;
+}
+.nav-links a:hover {
+color: #4f46e5;
+transform: translateY(-1px);
+}
+.btn-primary {
+padding: 10px 18px;
+border-radius: 999px;
+background: linear-gradient(135deg,#4f46e5,#a855f7);
+color: #f9fafb;
+font-size: 13px;
+border: none;
+cursor: pointer;
+box-shadow: 0 10px 25px rgba(79,70,229,0.35);
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 6px;
+transition: transform 0.16s ease, box-shadow 0.16s ease, opacity 0.16s ease;
+}
+.btn-primary span {
+font-size: 16px;
+transform: translateY(1px);
+}
+.btn-primary:hover {
+transform: translateY(-2px);
+box-shadow: 0 14px 35px rgba(79,70,229,0.45);
+opacity: 0.96;
+}
+.btn-secondary {
+padding: 9px 16px;
+border-radius: 999px;
+border: 1px solid rgba(148,163,184,0.7);
+font-size: 13px;
+background: rgba(255,255,255,0.9);
+cursor: pointer;
+transition: background 0.2s ease, transform 0.16s ease, border-color 0.2s ease;
+}
+.btn-secondary:hover {
+background: rgba(248,250,252,1);
+transform: translateY(-1px);
+border-color: #4f46e5;
+}
+.menu-toggle {
+display: none;
+flex-direction: column;
+gap: 4px;
+cursor: pointer;
+}
+.menu-toggle span {
+width: 20px;
+height: 2px;
+border-radius: 999px;
+background: #111827;
+transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.hero {
+padding-top: 96px;
+padding-bottom: 64px;
+}
+.hero-inner {
+max-width: 1200px;
+margin: 0 auto;
+padding: 32px 24px 24px 24px;
+border-radius: 32px;
+background: radial-gradient(circle at 10% 0%, #e0f2fe 0%, #eef2ff 25%, #ede9fe 55%, #f5f3ff 90%);
+box-shadow: 0 30px 80px rgba(148,163,184,0.35);
+display: grid;
+grid-template-columns: minmax(0,1.1fr) minmax(0,1fr);
+gap: 36px;
+align-items: center;
+position: relative;
+overflow: hidden;
+}
+.hero-badge {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 6px 12px;
+border-radius: 999px;
+background: rgba(15,23,42,0.06);
+font-size: 11px;
+color: #4b5563;
+margin-bottom: 16px;
+}
+.hero-badge-dot {
+width: 6px;
+height: 6px;
+border-radius: 999px;
+background: linear-gradient(135deg,#22c55e,#4ade80);
+}
+.hero-title {
+font-size: clamp(32px,4vw,40px);
+line-height: 1.1;
+font-weight: 600;
+color: #0f172a;
+margin-bottom: 12px;
+}
+.hero-highlight {
+background: linear-gradient(120deg,#4f46e5,#a855f7,#ec4899);
+-webkit-background-clip: text;
+color: transparent;
+}
+.hero-subtitle {
+font-size: 15px;
+color: #4b5563;
+max-width: 480px;
+margin-bottom: 20px;
+}
+.hero-tags {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+margin-bottom: 22px;
+}
+.tag-pill {
+font-size: 11px;
+padding: 4px 10px;
+border-radius: 999px;
+background: rgba(129,140,248,0.08);
+color: #4f46e5;
+border: 1px solid rgba(129,140,248,0.35);
+}
+.hero-actions {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+align-items: center;
+margin-bottom: 16px;
+}
+.hero-note {
+font-size: 11px;
+color: #6b7280;
+}
+.hero-image-wrap {
+position: relative;
+height: 100%;
+min-height: 260px;
+border-radius: 28px;
+overflow: hidden;
+background: radial-gradient(circle at 20% 0%, #fee2e2 0%, #fef3c7 30%, #a855f7 80%);
+display: flex;
+align-items: flex-end;
+justify-content: center;
+}
+.hero-image-overlay {
+position: absolute;
+inset: 0;
+background: linear-gradient(to top, rgba(15,23,42,0.8), transparent 50%);
+opacity: 0.55;
+}
+.hero-image {
+position: absolute;
+inset: 0;
+background-image: url("https://images.pexels.com/photos/5531526/pexels-photo-5531526.jpeg?auto=compress&cs=tinysrgb&w=1600");
+background-size: cover;
+background-position: center;
+filter: saturate(1.15);
+}
+.hero-foreground {
+position: relative;
+padding: 18px 18px 20px 18px;
+width: 100%;
+display: flex;
+flex-direction: column;
+gap: 10px;
+z-index: 2;
+}
+.hero-pill-row {
+display: flex;
+justify-content: flex-end;
+}
+.hero-pill {
+padding: 6px 12px;
+border-radius: 999px;
+font-size: 11px;
+background: rgba(15,23,42,0.78);
+color: #e5e7eb;
+backdrop-filter: blur(10px);
+display: inline-flex;
+align-items: center;
+gap: 6px;
+}
+.hero-pill span {
+width: 6px;
+height: 6px;
+border-radius: 999px;
+background: #22c55e;
+}
+.hero-stat-bar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 10px;
+}
+.hero-stat {
+background: rgba(15,23,42,0.8);
+border-radius: 18px;
+padding: 10px 12px;
+color: #f9fafb;
+font-size: 11px;
+flex: 1;
+backdrop-filter: blur(12px);
+}
+.hero-stat strong {
+display: block;
+font-size: 14px;
+}
+.hero-bottom-labels {
+display: flex;
+flex-wrap: wrap;
+gap: 6px;
+margin-top: 4px;
+}
+.hero-badge-soft {
+padding: 4px 8px;
+border-radius: 999px;
+font-size: 10px;
+background: rgba(249,250,251,0.12);
+color: #e5e7eb;
+border: 1px solid rgba(148,163,184,0.35);
+}
+.section {
+max-width: 1120px;
+margin: 0 auto;
+padding: 40px 24px 24px 24px;
+}
+.section-header {
+max-width: 620px;
+margin-bottom: 26px;
+}
+.section-kicker {
+font-size: 11px;
+letter-spacing: 0.16em;
+text-transform: uppercase;
+color: #a855f7;
+margin-bottom: 6px;
+}
+.section-title {
+font-size: 24px;
+font-weight: 600;
+color: #0f172a;
+margin-bottom: 6px;
+}
+.section-subtitle {
+font-size: 14px;
+color: #6b7280;
+}
+.grid-two {
+display: grid;
+grid-template-columns: minmax(0,1.1fr) minmax(0,0.9fr);
+gap: 36px;
+align-items: flex-start;
+}
+.about-text {
+font-size: 14px;
+color: #4b5563;
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+.about-card {
+background: linear-gradient(135deg,#eef2ff,#f5f3ff);
+border-radius: 24px;
+padding: 20px 22px;
+box-shadow: 0 20px 45px rgba(148,163,184,0.35);
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+.about-tag {
+font-size: 11px;
+color: #4f46e5;
+padding: 4px 10px;
+border-radius: 999px;
+align-self: flex-start;
+background: rgba(129,140,248,0.16);
+}
+.about-highlight {
+font-size: 20px;
+font-weight: 600;
+color: #0f172a;
+}
+.about-note {
+font-size: 12px;
+color: #6b7280;
+}
+.chip-row {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+margin-top: 6px;
+}
+.chip {
+font-size: 10px;
+padding: 4px 8px;
+border-radius: 999px;
+border: 1px dashed rgba(148,163,184,0.7);
+color: #4b5563;
+background: rgba(248,250,252,0.8);
+}
+.cards-row {
+display: grid;
+grid-template-columns: repeat(3,minmax(0,1fr));
+gap: 18px;
+}
+.card {
+border-radius: 22px;
+padding: 18px 18px 20px 18px;
+background: rgba(255,255,255,0.9);
+border: 1px solid rgba(226,232,240,0.9);
+box-shadow: 0 18px 45px rgba(148,163,184,0.25);
+display: flex;
+flex-direction: column;
+gap: 10px;
+transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+.card:hover {
+transform: translateY(-4px);
+box-shadow: 0 24px 60px rgba(148,163,184,0.35);
+border-color: rgba(129,140,248,0.75);
+}
+.card-icon {
+width: 28px;
+height: 28px;
+border-radius: 14px;
+background: radial-gradient(circle at 30% 20%, #fee2e2, #a855f7);
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 14px;
+color: #f9fafb;
+}
+.card-title {
+font-size: 15px;
+font-weight: 600;
+color: #111827;
+}
+.card-text {
+font-size: 13px;
+color: #4b5563;
+}
+.card-label {
+font-size: 11px;
+color: #6b7280;
+}
+.pills-row {
+display: flex;
+flex-wrap: wrap;
+gap: 6px;
+margin-top: 4px;
+}
+.pill {
+font-size: 10px;
+padding: 4px 8px;
+border-radius: 999px;
+background: rgba(249,250,251,1);
+border: 1px solid rgba(209,213,219,0.9);
+}
+.benefits-grid {
+display: grid;
+grid-template-columns: minmax(0,1.1fr) minmax(0,0.9fr);
+gap: 28px;
+align-items: stretch;
+}
+.benefit-list {
+display: grid;
+grid-template-columns: repeat(3,minmax(0,1fr));
+gap: 14px;
+}
+.benefit {
+background: rgba(255,255,255,0.96);
+border-radius: 18px;
+padding: 14px 14px 16px 14px;
+border: 1px solid rgba(226,232,240,0.9);
+display: flex;
+flex-direction: column;
+gap: 6px;
+font-size: 13px;
+}
+.benefit strong {
+font-size: 13px;
+color: #111827;
+}
+.benefit span {
+font-size: 11px;
+color: #4b5563;
+}
+.benefit-tag {
+font-size: 10px;
+padding: 2px 8px;
+border-radius: 999px;
+background: rgba(239,246,255,1);
+color: #1d4ed8;
+align-self: flex-start;
+}
+.benefits-side {
+border-radius: 24px;
+padding: 20px 22px;
+background: radial-gradient(circle at 0% 0%, #eef2ff 0%, #e0f2fe 40%, #f5f3ff 100%);
+display: flex;
+flex-direction: column;
+gap: 10px;
+box-shadow: 0 22px 60px rgba(148,163,184,0.4);
+}
+.benefits-side-title {
+font-size: 18px;
+font-weight: 600;
+color: #0f172a;
+}
+.benefits-side-text {
+font-size: 13px;
+color: #4b5563;
+}
+.benefits-meter {
+margin-top: 6px;
+width: 100%;
+height: 8px;
+border-radius: 999px;
+background: rgba(226,232,240,0.9);
+overflow: hidden;
+position: relative;
+}
+.benefits-meter-fill {
+position: absolute;
+left: 0;
+top: 0;
+bottom: 0;
+width: 82%;
+border-radius: 999px;
+background: linear-gradient(90deg,#22c55e,#a3e635);
+}
+.benefits-footer-note {
+font-size: 11px;
+color: #6b7280;
+}
+.process-wrapper {
+border-radius: 26px;
+background: rgba(255,255,255,0.9);
+border: 1px solid rgba(226,232,240,0.95);
+box-shadow: 0 22px 55px rgba(148,163,184,0.3);
+padding: 24px 22px 22px 22px;
+display: flex;
+flex-direction: column;
+gap: 16px;
+}
+.process-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 12px;
+}
+.process-title {
+font-size: 18px;
+font-weight: 600;
+color: #0f172a;
+}
+.process-label {
+font-size: 11px;
+color: #6b7280;
+}
+.process-steps {
+display: grid;
+grid-template-columns: repeat(3,minmax(0,1fr));
+gap: 12px;
+margin-top: 10px;
+}
+.step {
+border-radius: 18px;
+padding: 14px 14px 16px 14px;
+background: rgba(248,250,252,1);
+border: 1px dashed rgba(148,163,184,0.9);
+display: flex;
+flex-direction: column;
+gap: 8px;
+}
+.step-index {
+display: flex;
+align-items: center;
+gap: 6px;
+font-size: 11px;
+color: #4f46e5;
+}
+.step-index span {
+width: 18px;
+height: 18px;
+border-radius: 999px;
+border: 1px solid rgba(129,140,248,0.6);
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 11px;
+}
+.step-title {
+font-size: 14px;
+font-weight: 600;
+color: #111827;
+}
+.step-text {
+font-size: 12px;
+color: #4b5563;
+}
+.step-arrow {
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 16px;
+color: #c4b5fd;
+}
+.contact-section {
+padding-bottom: 48px;
+}
+.contact-card {
+max-width: 880px;
+margin: 0 auto;
+border-radius: 28px;
+background: radial-gradient(circle at 0% 0%, #eef2ff 0%, #f5f3ff 45%, #ffffff 100%);
+box-shadow: 0 20px 60px rgba(148,163,184,0.35);
+padding: 26px 26px 22px 26px;
+display: grid;
+grid-template-columns: minmax(0,1.1fr) minmax(0,0.9fr);
+gap: 26px;
+align-items: center;
+}
+.contact-intro-title {
+font-size: 22px;
+font-weight: 600;
+color: #0f172a;
+margin-bottom: 8px;
+}
+.contact-intro-text {
+font-size: 14px;
+color: #4b5563;
+margin-bottom: 14px;
+}
+.contact-pills {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+margin-bottom: 10px;
+}
+.contact-pill {
+font-size: 11px;
+padding: 4px 10px;
+border-radius: 999px;
+background: rgba(248,250,252,1);
+border: 1px solid rgba(209,213,219,1);
+color: #4b5563;
+}
+.contact-meta {
+font-size: 12px;
+color: #6b7280;
+}
+.contact-meta strong {
+color: #111827;
+}
+.contact-cta {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+.contact-cta-note {
+font-size: 12px;
+color: #6b7280;
+}
+.contact-mini {
+display: flex;
+flex-direction: column;
+gap: 6px;
+font-size: 12px;
+color: #4b5563;
+}
+.contact-mini span {
+display: flex;
+align-items: center;
+gap: 6px;
+}
+.contact-mini-label {
+font-size: 11px;
+text-transform: uppercase;
+letter-spacing: 0.08em;
+color: #9ca3af;
+}
+.footer {
+border-top: 1px solid rgba(226,232,240,1);
+padding: 18px 24px 26px 24px;
+margin-top: 24px;
+background: rgba(249,250,251,0.9);
+}
+.footer-inner {
+max-width: 1120px;
+margin: 0 auto;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: space-between;
+gap: 14px;
+font-size: 12px;
+color: #6b7280;
+}
+.footer-contact {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+align-items: center;
+}
+.footer-contact span {
+display: flex;
+align-items: center;
+gap: 6px;
+}
+.footer-contact a {
+color: #4f46e5;
+text-decoration: underline;
+text-decoration-thickness: 1px;
+text-underline-offset: 3px;
+}
+.modal-backdrop {
+position: fixed;
+inset: 0;
+background: rgba(15,23,42,0.55);
+backdrop-filter: blur(10px);
+display: flex;
+align-items: center;
+justify-content: center;
+z-index: 50;
+opacity: 0;
+pointer-events: none;
+transition: opacity 0.2s ease;
+}
+.modal-backdrop.active {
+opacity: 1;
+pointer-events: auto;
+}
+.modal {
+width: 100%;
+max-width: 460px;
+border-radius: 24px;
+background: #ffffff;
+box-shadow: 0 30px 80px rgba(15,23,42,0.4);
+padding: 22px 22px 20px 22px;
+display: flex;
+flex-direction: column;
+gap: 14px;
+}
+.modal-header {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+gap: 10px;
+}
+.modal-title {
+font-size: 18px;
+font-weight: 600;
+color: #0f172a;
+}
+.modal-sub {
+font-size: 13px;
+color: #4b5563;
+margin-top: 4px;
+}
+.modal-close {
+background: transparent;
+border: none;
+cursor: pointer;
+font-size: 18px;
+line-height: 1;
+color: #6b7280;
+}
+.form-grid {
+display: grid;
+grid-template-columns: repeat(2,minmax(0,1fr));
+gap: 12px;
+margin-top: 10px;
+}
+.form-field {
+display: flex;
+flex-direction: column;
+gap: 4px;
+font-size: 12px;
+color: #374151;
+}
+.form-field-full {
+grid-column: 1 / -1;
+}
+.form-label {
+font-weight: 500;
+}
+.form-optional {
+font-weight: 400;
+color: #9ca3af;
+font-size: 11px;
+margin-left: 4px;
+}
+.form-input,
+.form-textarea,
+.form-select {
+border-radius: 999px;
+border: 1px solid rgba(209,213,219,1);
+padding: 8px 12px;
+font-size: 13px;
+font-family: inherit;
+outline: none;
+background: #f9fafb;
+transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.form-textarea {
+border-radius: 16px;
+min-height: 80px;
+resize: vertical;
+}
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+border-color: #4f46e5;
+background: #ffffff;
+box-shadow: 0 0 0 1px rgba(129,140,248,0.3);
+}
+.form-footer {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 10px;
+margin-top: 10px;
+}
+.form-note {
+font-size: 11px;
+color: #9ca3af;
+}
+.modal-success {
+max-width: 360px;
+}
+.success-icon {
+width: 38px;
+height: 38px;
+border-radius: 999px;
+background: radial-gradient(circle at 30% 20%, #bbf7d0, #22c55e);
+display: flex;
+align-items: center;
+justify-content: center;
+color: #f9fafb;
+font-size: 20px;
+margin-bottom: 6px;
+}
+.success-title {
+font-size: 18px;
+font-weight: 600;
+color: #0f172a;
+margin-bottom: 4px;
+}
+.success-text {
+font-size: 13px;
+color: #4b5563;
+}
+.success-meta {
+font-size: 11px;
+color: #9ca3af;
+margin-top: 8px;
+}
+@media (max-width: 980px) {
+.hero-inner {
+grid-template-columns: minmax(0,1fr);
+}
+.hero-image-wrap {
+order: -1;
+min-height: 220px;
+}
+.grid-two {
+grid-template-columns: minmax(0,1fr);
+}
+.cards-row {
+grid-template-columns: minmax(0,1fr);
+}
+.benefits-grid {
+grid-template-columns: minmax(0,1fr);
+}
+.benefit-list {
+grid-template-columns: minmax(0,1fr);
+}
+.process-steps {
+grid-template-columns: minmax(0,1fr);
+}
+.contact-card {
+grid-template-columns: minmax(0,1fr);
+}
+}
+@media (max-width: 780px) {
+.nav-links {
+position: absolute;
+top: 64px;
+right: 18px;
+left: 18px;
+background: rgba(248,250,252,0.98);
+border-radius: 18px;
+padding: 14px 16px;
+flex-direction: column;
+gap: 12px;
+box-shadow: 0 20px 50px rgba(15,23,42,0.25);
+transform-origin: top;
+transform: scaleY(0.9);
+opacity: 0;
+pointer-events: none;
+transition: opacity 0.16s ease, transform 0.16s ease;
+}
+.nav-links.active {
+opacity: 1;
+pointer-events: auto;
+transform: scaleY(1);
+}
+.menu-toggle {
+display: flex;
+}
+.nav-desktop-cta {
+display: none;
+}
+}
+@media (max-width: 640px) {
+.hero {
+padding-top: 88px;
+}
+.section {
+padding-inline: 18px;
+}
+.contact-card {
+padding-inline: 18px;
+}
+.footer {
+padding-inline: 18px;
+}
+}
+</style>
+</head>
+<body>
+<header>
+<div class="nav-container">
+<div class="logo">
+<div class="logo-mark">
+XT
+</div>
+<div>
+<div>Xoco Transport</div>
+<div class="logo-sub">Cocina en movimiento para empresas</div>
+</div>
+</div>
+<nav class="nav-links" id="navLinks">
+<a href="#inicio">Inicio</a>
+<a href="#concepto">Concepto</a>
+<a href="#experiencias">Experiencias</a>
+<a href="#ventajas">Ventajas</a>
+<a href="#proceso">Ruta de servicio</a>
+<a href="#contacto">Contacto</a>
+<button class="btn-primary nav-desktop-cta" onclick="openContactModal()">
+Reservar catering
+<span>↗</span>
+</button>
+</nav>
+<div class="menu-toggle" id="menuToggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+</header>
+<main>
+<section class="hero" id="inicio">
+<div class="hero-inner">
+<div>
+<div class="hero-badge">
+<div class="hero-badge-dot"></div>
+Servicio diario en Reynosa y zona industrial
+</div>
+<h1 class="hero-title">
+Donde el <span class="hero-highlight">sabor</span> alcanza cada turno
+</h1>
+<p class="hero-subtitle">
+Xoco Transport, S. de R.L. de C.V. combina cocina mexicana contemporánea con logística de ruta para alimentar a equipos enteros sin detener la operación.
+</p>
+<div class="hero-tags">
+<div class="tag-pill">Comedores in-house</div>
+<div class="tag-pill">Food trucks corporativos</div>
+<div class="tag-pill">Catering para líneas de producción</div>
+</div>
+<div class="hero-actions">
+<button class="btn-primary" onclick="document.getElementById('experiencias').scrollIntoView({behavior:'smooth'})">
+Ver experiencias
+<span>⟶</span>
+</button>
+<button class="btn-secondary" onclick="openContactModal()">
+Hablar con nuestro equipo
+</button>
+</div>
+<div class="hero-note">
+Atendemos empresas que valoran tiempos precisos, menús equilibrados y una experiencia cálida para su personal.
+</div>
+</div>
+<div class="hero-image-wrap">
+<div class="hero-image"></div>
+<div class="hero-image-overlay"></div>
+<div class="hero-foreground">
+<div class="hero-pill-row">
+<div class="hero-pill">
+<span></span>
+Servicio activo hoy
+</div>
+</div>
+<div class="hero-stat-bar">
+<div class="hero-stat">
+<strong>+1 200</strong>
+personas servidas al día en turnos continuos.
+</div>
+<div class="hero-stat">
+<strong>18</strong>
+puntos de servicio entre Reynosa y Lomas de Jarachina Sur.
+</div>
+</div>
+<div class="hero-bottom-labels">
+<div class="hero-badge-soft">Rutas sincronizadas con cambios de turno</div>
+<div class="hero-badge-soft">Recetas diseñadas por chef local</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="concepto">
+<div class="grid-two">
+<div class="section-header">
+<div class="section-kicker">
+Nuestra historia con sabor
+</div>
+<h2 class="section-title">
+De transporte a experiencia culinaria integral
+</h2>
+<p class="section-subtitle">
+Convertimos la pausa de comida en un momento esperado del día, sin que tus equipos tengan que salir del sitio ni perder minutos de producción.
+</p>
+</div>
+<div class="about-text">
+<p>
+Nacimos en Reynosa atendiendo rutas de transporte industrial y descubrimos que el verdadero punto de encuentro de los equipos estaba alrededor de la mesa. Xoco Transport evolucionó para integrar cocina y logística, ofreciendo soluciones de alimentación completas dentro y fuera de planta.
+</p>
+<p>
+Hoy operamos comedores, unidades móviles y estaciones de servicio rápido que se adaptan al espacio disponible en cada empresa, respetando protocolos internos y tiempos de seguridad. Trabajamos con proveedores locales para garantizar frescura y apoyar a la comunidad.
+</p>
+<p>
+Nuestros menús se diseñan con nutriólogos aliados, equilibrando energía para jornadas intensas con platos que reconfortan: guisos caseros, opciones ligeras, desayunos funcionales y snacks para turnos nocturnos.
+</p>
+<p>
+Gracias a nuestra experiencia logística, podemos calendarizar rutas de servicio exactas para cada línea de producción, asegurando que el alimento llegue caliente, en porciones consistentes y con un flujo ordenado en el punto de servicio.
+</p>
+<p>
+Para las empresas que operan más de un sitio, coordinamos un mismo estándar culinario en todas las locaciones, registrando consumo, preferencias y volúmenes para mejorar el diseño del menú con cada ciclo.
+</p>
+</div>
+</div>
+<div class="section">
+<div class="about-card">
+<div class="about-tag">
+Un solo operador, todo el circuito alimentario
+</div>
+<div class="about-highlight">
+Centralizamos la cocina, el transporte y el servicio en piso
+</div>
+<div class="about-note">
+Mientras tu equipo se enfoca en la operación, nosotros nos encargamos de planear, cocinar, trasladar y servir cada comida, con reportes claros para recursos humanos y finanzas.
+</div>
+<div class="chip-row">
+<div class="chip">Control de porciones por turno</div>
+<div class="chip">Menús rotativos quincenales</div>
+<div class="chip">Capacidad para eventos internos</div>
+<div class="chip">Integración con credenciales de empleado</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="experiencias">
+<div class="section-header">
+<div class="section-kicker">
+Lo que hacemos día a día
+</div>
+<h2 class="section-title">
+Servicios pensados para equipos en movimiento constante
+</h2>
+<p class="section-subtitle">
+Cada servicio está diseñado para entornos industriales y corporativos de Reynosa que requieren horarios definidos, flujos ordenados y alimentos confiables.
+</p>
+</div>
+<div class="cards-row">
+<div class="card">
+<div class="card-icon">🍲</div>
+<div class="card-title">
+Operación de comedores corporativos
+</div>
+<div class="card-label">
+Para plantas, centros logísticos y oficinas con alto tráfico interno.
+</div>
+<p class="card-text">
+Instalamos y operamos estaciones de servicio caliente, barras de ensaladas y puntos de café dentro de tus instalaciones. Nuestro equipo coordina el servicio por horario para evitar filas y adaptamos el menú a políticas internas de la empresa.
+</p>
+<div class="pills-row">
+<div class="pill">Diseño de layout del comedor</div>
+<div class="pill">Horarios por área o turno</div>
+<div class="pill">Registro de consumo por empleado</div>
+</div>
+</div>
+<div class="card">
+<div class="card-icon">🚚</div>
+<div class="card-title">
+Unidades móviles y food trucks internos
+</div>
+<div class="card-label">
+Sabor de calle mexicana en tu estacionamiento o patio de maniobras.
+</div>
+<p class="card-text">
+Llevamos nuestras unidades móviles a puntos estratégicos de tu planta para servir tacos, bowls y especiales del día sin que el personal tenga que desplazarse grandes distancias. Ideal para líneas extensas o locaciones con accesos restringidos.
+</p>
+<div class="pills-row">
+<div class="pill">Rutas definidas por reloj checador</div>
+<div class="pill">Menús rápidos y completos</div>
+<div class="pill">Opción de pago con vales</div>
+</div>
+</div>
+<div class="card">
+<div class="card-icon">🎉</div>
+<div class="card-title">
+Catering para eventos internos y lanzamientos
+</div>
+<div class="card-label">
+Para capacitaciones, celebraciones y visitas de clientes clave.
+</div>
+<p class="card-text">
+Planeamos menús especiales para asambleas, inauguraciones y reconocimientos, coordinando el servicio según agenda y protocolo. Podemos montar estaciones temáticas, coffee breaks, desayunos ejecutivos o cenas informales dentro de tus instalaciones.
+</p>
+<div class="pills-row">
+<div class="pill">Coffee breaks escalonados</div>
+<div class="pill">Estaciones temáticas mexicanas</div>
+<div class="pill">Servicio con personal uniformado</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="ventajas">
+<div class="section-header">
+<div class="section-kicker">
+Por qué nuestra cocina elige la ruta larga
+</div>
+<h2 class="section-title">
+Ventajas de trabajar con Xoco Transport
+</h2>
+<p class="section-subtitle">
+Más que un proveedor de comida, somos un aliado operativo que mide tiempos, porciones y satisfacción del personal en cada turno.
+</p>
+</div>
+<div class="benefits-grid">
+<div class="benefit-list">
+<div class="benefit">
+<div class="benefit-tag">
+Operación alineada a planta
+</div>
+<strong>
+Horarios sincronizados con tus cambios de turno
+</strong>
+<span>
+Planificamos servicio por línea y área para evitar cuellos de botella en accesos, reduciendo tiempos muertos y manteniendo el flujo de producción estable.
+</span>
+</div>
+<div class="benefit">
+<div class="benefit-tag">
+Cuidado nutricional
+</div>
+<strong>
+Menús diseñados para jornadas de alto rendimiento
+</strong>
+<span>
+Equilibramos carbohidratos, proteína y opciones ligeras para turnos nocturnos, incorporando alternativas vegetarianas y platillos con baja fritura.
+</span>
+</div>
+<div class="benefit">
+<div class="benefit-tag">
+Visibilidad de consumo
+</div>
+<strong>
+Reportes claros para RH y finanzas
+</strong>
+<span>
+Entregamos reportes de consumo por día, turno y tipo de platillo, permitiendo ajustar presupuesto y políticas de subsidio de alimento con datos reales.
+</span>
+</div>
+<div class="benefit">
+<div class="benefit-tag">
+Sabor local
+</div>
+<strong>
+Recetas que conectan con el equipo
+</strong>
+<span>
+Respetamos el gusto de Reynosa: guisos caseros, tortillas recién calentadas, salsas preparadas al día y postres sencillos que recuerdan la cocina de casa.
+</span>
+</div>
+<div class="benefit">
+<div class="benefit-tag">
+Ejecución segura
+</div>
+<strong>
+Protocolos de higiene auditables
+</strong>
+<span>
+Aplicamos controles de temperatura, bitácoras de limpieza y capacitación constante a todo el personal para cumplir con estándares de inocuidad alimentaria.
+</span>
+</div>
+<div class="benefit">
+<div class="benefit-tag">
+Escalabilidad real
+</div>
+<strong>
+Capacidad para crecer con tu operación
+</strong>
+<span>
+Podemos escalar rápidamente el número de comidas por turno, abrir nuevos puntos de servicio o montar estaciones temporales según tus planes de expansión.
+</span>
+</div>
+</div>
+<div class="benefits-side">
+<div class="benefits-side-title">
+Una experiencia que se siente en el ambiente del equipo
+</div>
+<div class="benefits-side-text">
+Cuando la comida es confiable, abundante y llega a tiempo, el ánimo del personal mejora de forma tangible. Menos salidas no planificadas, más conversaciones positivas en los descansos y un mejor recibimiento para colaboradores nuevos.
+</div>
+<div class="benefits-meter">
+<div class="benefits-meter-fill"></div>
+</div>
+<div class="benefits-footer-note">
+En empresas donde operamos a diario, más del 80% del personal elige comer con nosotros al menos una vez por turno, lo que se refleja en encuestas internas de satisfacción.
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="proceso">
+<div class="section-header">
+<div class="section-kicker">
+Cómo llevamos el sabor hasta tu planta
+</div>
+<h2 class="section-title">
+Nuestra ruta de servicio en tres etapas
+</h2>
+<p class="section-subtitle">
+Un proceso claro, con responsables definidos y tiempos de implementación que se ajustan a la agenda de tu empresa.
+</p>
+</div>
+<div class="process-wrapper">
+<div class="process-header">
+<div>
+<div class="process-title">
+Del diagnóstico al primer servicio sin improvisaciones
+</div>
+<div class="process-label">
+Coordinamos áreas de operaciones, recursos humanos y seguridad para que todos conozcan la dinámica desde el día uno.
+</div>
+</div>
+<div class="hero-pill">
+<span></span>
+Implementación típica en 3 a 4 semanas
+</div>
+</div>
+<div class="process-steps">
+<div class="step">
+<div class="step-index">
+<span>1</span>
+Diagnóstico y diseño del servicio
+</div>
+<div class="step-title">
+Escuchamos cómo trabaja tu equipo
+</div>
+<p class="step-text">
+Visitamos tus instalaciones en Reynosa, analizamos número de colaboradores por turno, tiempos de descanso, accesos disponibles y normativas internas. A partir de esto proponemos un modelo de comedor, unidades móviles o una combinación de ambos.
+</p>
+</div>
+<div class="step step-arrow">
+<div>⟶</div>
+</div>
+<div class="step">
+<div class="step-index">
+<span>2</span>
+Piloto y ajuste fino de menú
+</div>
+<div class="step-title">
+Probamos con tu personal real
+</div>
+<p class="step-text">
+Arrancamos un piloto en uno o dos turnos, recogiendo comentarios del personal y mandos medios. Ajustamos tiempos de servicio, porciones y variedad para lograr un equilibrio entre costo, satisfacción y flujo operativo.
+</p>
+</div>
+<div class="step">
+<div class="step-index">
+<span>3</span>
+Operación continua y seguimiento
+</div>
+<div class="step-title">
+Convertimos la comida en un hábito esperado
+</div>
+<p class="step-text">
+Establecemos un calendario de menús, reportes de consumo y puntos de revisión mensual con tu empresa. Nuestro equipo de cocina y logística se encarga del resto: compras, preparación, transporte, montaje y servicio diario.
+</p>
+</div>
+<div class="step step-arrow">
+<div>⟶</div>
+</div>
+<div class="step">
+<div class="step-index">
+<span>+</span>
+Acompañamiento a largo plazo
+</div>
+<div class="step-title">
+Evolucionamos junto con tu operación
+</div>
+<p class="step-text">
+Si abres nuevas naves, modificas horarios o crece tu plantilla, adaptamos el servicio sin necesidad de cambiar de proveedor. Una sola relación, todos los ajustes que necesites.
+</p>
+</div>
+</div>
+</div>
+</section>
+<section class="section contact-section" id="contacto">
+<div class="contact-card">
+<div>
+<div class="section-kicker">
+Conversemos sobre tu comedor ideal
+</div>
+<div class="contact-intro-title">
+Listos para servir a tu equipo en Reynosa
+</div>
+<p class="contact-intro-text">
+Cuéntanos cuántas personas comen por turno, qué tipo de espacio tienes disponible y en qué fecha te gustaría iniciar. Diseñaremos una propuesta específica para tu operación, sin plantillas genéricas.
+</p>
+<div class="contact-pills">
+<div class="contact-pill">Empresas de manufactura y logística</div>
+<div class="contact-pill">Turnos rotativos y nocturnos</div>
+<div class="contact-pill">Soluciones para varios sitios</div>
+</div>
+<p class="contact-meta">
+Escríbenos directamente a <strong>info@xocotransport.pro</strong> o usa el formulario para agendar una llamada de exploración por videoconferencia.
+</p>
+</div>
+<div class="contact-cta">
+<button class="btn-primary" onclick="openContactModal()">
+Abrir formulario de contacto
+<span>✉</span>
+</button>
+<div class="contact-cta-note">
+No pedimos número de teléfono en el formulario. Una vez recibido tu mensaje, coordinaremos el siguiente paso por correo electrónico.
+</div>
+<div class="contact-mini">
+<div class="contact-mini-label">
+Datos de contacto
+</div>
+<span>
+📍
+San Angel No. 306, 88736 Reynosa, Lomas De Jarachina Sur, México
+</span>
+<span>
+✉
+<a href="mailto:info@xocotransport.pro">info@xocotransport.pro</a>
+</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="footer-inner">
+<div>
+© <span id="year"></span> Xoco Transport, S. de R.L. de C.V. Todos los derechos reservados.
+</div>
+<div class="footer-contact">
+<span>
+📍
+San Angel No. 306, 88736 Reynosa (Lomas De Jarachina Sur)
+</span>
+<span>
+✉
+<a href="mailto:info@xocotransport.pro">info@xocotransport.pro</a>
+</span>
+</div>
+</div>
+</footer>
+<div class="modal-backdrop" id="contactModal">
+<div class="modal">
+<div class="modal-header">
+<div>
+<div class="modal-title">
+Cuéntanos sobre tu empresa
+</div>
+<div class="modal-sub">
+Completa los datos y prepararemos una propuesta de servicio de alimentos alineada a tus turnos y espacios.
+</div>
+</div>
+<button class="modal-close" onclick="closeContactModal()">
+×
+</button>
+</div>
+<form id="contactForm">
+<div class="form-grid">
+<div class="form-field">
+<label class="form-label" for="nombre">
+Nombre completo
+</label>
+<input class="form-input" id="nombre" name="nombre" type="text" required>
+</div>
+<div class="form-field">
+<label class="form-label" for="empresa">
+Empresa
+<span class="form-optional">
+(opcional)
+</span>
+</label>
+<input class="form-input" id="empresa" name="empresa" type="text">
+</div>
+<div class="form-field">
+<label class="form-label" for="correo">
+Correo electrónico
+</label>
+<input class="form-input" id="correo" name="correo" type="email" required>
+</div>
+<div class="form-field">
+<label class="form-label" for="servicio">
+Tipo de servicio que te interesa
+</label>
+<select class="form-select" id="servicio" name="servicio" required>
+<option value="" disabled selected>Selecciona una opción</option>
+<option value="comedor">Operación de comedor interno</option>
+<option value="unidades">Unidades móviles / food trucks</option>
+<option value="catering">Catering para eventos internos</option>
+<option value="mixto">Modelo mixto o proyecto especial</option>
+</select>
+</div>
+<div class="form-field form-field-full">
+<label class="form-label" for="mensaje">
+Cuéntanos sobre tus turnos, horarios y número de personas
+</label>
+<textarea class="form-textarea" id="mensaje" name="mensaje" required></textarea>
+</div>
+</div>
+<div class="form-footer">
+<div class="form-note">
+Al enviar aceptas que te contactemos al correo proporcionado para compartir la propuesta y resolver dudas.
+</div>
+<button class="btn-primary" type="submit">
+Enviar mensaje
+<span>➤</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+<div class="modal-backdrop" id="successModal">
+<div class="modal modal-success">
+<div class="success-icon">
+✓
+</div>
+<div class="success-title">
+Mensaje enviado con éxito
+</div>
+<p class="success-text">
+Hemos recibido tu información. Nuestro equipo revisará los detalles y responderá desde <strong>info@xocotransport.pro</strong> con los siguientes pasos para tu servicio de alimentación.
+</p>
+<div class="success-meta">
+Si no ves nuestra respuesta en las próximas 24 horas, por favor revisa tu carpeta de correo no deseado o agrega nuestro correo a tus contactos.
+</div>
+<div style="margin-top:12px;display:flex;justify-content:flex-end;gap:8px;">
+<button class="btn-secondary" type="button" onclick="closeSuccessModal()">
+Cerrar
+</button>
+</div>
+</div>
+</div>
+<script>
+const yearSpan = document.getElementById("year");
+if (yearSpan) {
+yearSpan.textContent = new Date().getFullYear();
+}
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+if (menuToggle && navLinks) {
+menuToggle.addEventListener("click", function () {
+navLinks.classList.toggle("active");
+menuToggle.classList.toggle("open");
+const bars = menuToggle.querySelectorAll("span");
+if (menuToggle.classList.contains("open")) {
+bars[0].style.transform = "translateY(6px) rotate(45deg)";
+bars[1].style.opacity = "0";
+bars[2].style.transform = "translateY(-6px) rotate(-45deg)";
+} else {
+bars[0].style.transform = "";
+bars[1].style.opacity = "1";
+bars[2].style.transform = "";
+}
+});
+navLinks.querySelectorAll("a").forEach(function (link) {
+link.addEventListener("click", function () {
+navLinks.classList.remove("active");
+menuToggle.classList.remove("open");
+const bars = menuToggle.querySelectorAll("span");
+bars[0].style.transform = "";
+bars[1].style.opacity = "1";
+bars[2].style.transform = "";
+});
+});
+}
+const contactModal = document.getElementById("contactModal");
+const successModal = document.getElementById("successModal");
+function openContactModal() {
+if (contactModal) {
+contactModal.classList.add("active");
+}
+}
+function closeContactModal() {
+if (contactModal) {
+contactModal.classList.remove("active");
+}
+}
+function openSuccessModal() {
+if (successModal) {
+successModal.classList.add("active");
+}
+}
+function closeSuccessModal() {
+if (successModal) {
+successModal.classList.remove("active");
+}
+}
+if (contactModal) {
+contactModal.addEventListener("click", function (event) {
+if (event.target === contactModal) {
+closeContactModal();
+}
+});
+}
+if (successModal) {
+successModal.addEventListener("click", function (event) {
+if (event.target === successModal) {
+closeSuccessModal();
+}
+});
+}
+const contactForm = document.getElementById("contactForm");
+if (contactForm) {
+contactForm.addEventListener("submit", function (event) {
+event.preventDefault();
+closeContactModal();
+openSuccessModal();
+contactForm.reset();
+});
+}
+</script>
+</body>
+</html>
